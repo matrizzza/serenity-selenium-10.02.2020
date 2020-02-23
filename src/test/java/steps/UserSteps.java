@@ -20,17 +20,17 @@ public class UserSteps extends ScenarioSteps {
         return homeSteps;
     }
 
-    public LoginSteps auth(){
+    public LoginSteps auth() {
         return loginSteps;
     }
 
-    public SearchSteps searchPage(){
+    public SearchSteps searchPage() {
         return searchSteps;
     }
 
     @Step
-    public UserSteps validatePageTitle(String pageTitle){
-        Assert.assertThat("Wrong page title!", getDriver().getTitle(), is("LinkedIn"));
+    public UserSteps validatePageTitle(String pageTitle) {
+        Assert.assertThat("Wrong page title!", getDriver().getTitle(), is(pageTitle));
         return this;
     }
 }

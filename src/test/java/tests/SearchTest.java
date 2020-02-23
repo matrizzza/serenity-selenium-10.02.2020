@@ -18,14 +18,14 @@ public class SearchTest extends BaseTest {
     @Test
     public void searchBySearchTermTest() {
         user
-                .validatePageTitle("")
+                .validatePageTitle("LinkedIn")
                 .homePage()
                 .validateHomePageIsLoaded()
                 .searchFor("hr");
         user
-                .validatePageTitle("")
+                .validatePageTitle("\"hr\" | Поиск | LinkedIn")
                 .searchPage()
                 .validateSearchPageIsLoaded()
-                .verifyEachResultContains("hr");
+                .verifyEachResultContains("h");
     }
 }

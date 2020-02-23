@@ -14,12 +14,13 @@ public class HomeSteps extends ScenarioSteps {
     @Step
     public HomeSteps searchFor(String searchTerm) {
         homePage.searchFor(searchTerm);
+        waitABit(1500);
         return this;
     }
 
     @Step
-    public HomeSteps validateHomePageIsLoaded(){
-        Assert.assertTrue("Page is not loaded",homePage.isPageLoaded());
+    public HomeSteps validateHomePageIsLoaded() {
+        Assert.assertTrue("Page is not loaded", homePage.isPageLoaded());
         return this;
     }
 }

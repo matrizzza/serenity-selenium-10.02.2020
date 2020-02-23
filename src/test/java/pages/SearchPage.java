@@ -24,4 +24,8 @@ public class SearchPage extends PageObject {
             return false;
         }
     }
+
+    public List<WebElement> getSearchResults() {
+        return searchResults;
+    }
 }

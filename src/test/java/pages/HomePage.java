@@ -22,7 +22,6 @@ public class HomePage extends PageObject {
     }
 
     public boolean isPageLoaded(){
-        
         return profileNavItem.isDisplayed();
     }
 }
