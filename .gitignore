@@ -1,2 +1,5 @@
 # Project exclude paths
 /target/
+/.idea/.gitignore
+/.idea/*
+/serenity-selenium-10.02.2020.iml
