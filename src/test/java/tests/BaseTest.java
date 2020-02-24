@@ -11,10 +11,10 @@ public class BaseTest {
 
     @BeforeClass
     public static void setupClass() {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
     }
 
-    @Managed(driver = "chrome")
+    @Managed(driver = "firefox")
     WebDriver webDriver;
 
     @Steps

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchPage extends PageObject {
@@ -16,7 +17,7 @@ public class SearchPage extends PageObject {
     @FindBy(xpath = "//h3[contains(@class, 'search-results__total')]")
     private WebElement searchResultsTotal;
 
-    public boolean isPageLoaded(){
+    public boolean isPageLoaded() {
         try {
             waitFor(ExpectedConditions.visibilityOf(searchResultsTotal));
             return true;
@@ -25,7 +26,12 @@ public class SearchPage extends PageObject {
         }
     }
 
-    public List<WebElement> getSearchResults() {
-        return searchResults;
+    public List<String> getSearchResults() {
+        List<String> searchResultsList = new ArrayList<>();
+        for (WebElement searchResult : searchResults) {
+            evaluateJavascript("arguments[0].scrollIntoView();", searchResult);
+            searchResultsList.add(searchResult.getText().toLowerCase());
+        }
+        return searchResultsList;
     }
 }

@@ -5,11 +5,9 @@ import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
 import pages.HomePage;
 
-import static org.hamcrest.Matchers.is;
-
 public class HomeSteps extends ScenarioSteps {
-    private HomePage homePage;
 
+    private HomePage homePage;
 
     @Step
     public HomeSteps searchFor(String searchTerm) {
