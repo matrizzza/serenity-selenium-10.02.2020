@@ -30,20 +30,22 @@ public class SearchTest extends BaseTest {
     public void before() {
         user
                 .auth()
+                .openLandingPage()
                 .login("matrizzza@gmail.com", "!$6gMPQzDN&cE_)");
     }
 
     @Test
     public void searchBySearchTermTest() {
+        String[] relevantResults = {"hr", "HR", "Human Resources", "HUMAN RESOURCES"};
         user
-                //.validatePageTitle("LinkedIn")
+                .validatePageTitle("LinkedIn")
                 .homePage()
                 .validateHomePageIsLoaded()
                 .searchFor(searchTerm);
         user
-                //.validatePageTitle("\"hr\" | Поиск | LinkedIn")
+                .validatePageTitle("\"hr\" | Поиск | LinkedIn")
                 .searchPage()
                 .validateSearchPageIsLoaded()
-                .verifyEachResultContains("h");
+                .verifyEachResultContains(relevantResults);
     }
 }
