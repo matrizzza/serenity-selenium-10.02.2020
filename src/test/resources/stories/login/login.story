@@ -10,5 +10,11 @@ Narrative:
 
 Scenario: Successful login
 Given I open Landing page
-When I login with username 'matrizzza@gmail.com' and password '!$6gMPQzDN&cE_)'
+When I login with username userEmail and password userPassword
 Then I should see Home page
+
+Examples:
+|userEmail          |userPassword   |
+|matrizzza@gmail.com|!$6gMPQzDN&cE_)|
+|matriZZZa@gmail.com|!$6gMPQzDN&cE_)|
+|MATRIZZZA@gmail.com|!$6gMPQzDN&cE_)|

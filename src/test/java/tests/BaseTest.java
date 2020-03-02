@@ -9,14 +9,13 @@ import steps.UserSteps;
 
 public class BaseTest {
 
+    @Managed(driver = "chrome")
+    WebDriver webDriver;
+    @Steps
+    UserSteps user;
+
     @BeforeClass
     public static void setupClass() {
         WebDriverManager.chromedriver().setup();
     }
-
-    @Managed(driver = "chrome")
-    WebDriver webDriver;
-
-    @Steps
-    UserSteps user;
 }
