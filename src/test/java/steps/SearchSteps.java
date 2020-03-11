@@ -3,6 +3,7 @@ package steps;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.hamcrest.core.Every;
+import org.jbehave.core.annotations.Then;
 import org.junit.Assert;
 import pages.SearchPage;
 
@@ -19,6 +20,7 @@ public class SearchSteps extends ScenarioSteps {
     }
 
     @Step
+    @Then("I should see search result $searchTerm")
     public SearchSteps verifyEachResultContains(String searchTerm) {
         Assert.assertThat("SearchTerm not found.", searchPage.getSearchResults(), Every.everyItem(containsString(searchTerm)));
         return this;

@@ -20,6 +20,7 @@ public class LoginSteps extends ScenarioSteps {
         return this;
     }
 
+    @Given("I login with username $email and password $password")
     @When("I login with username $userEmail and password $userPassword")
     @Step
     public LoginSteps login(String userEmail, String userPassword) {
