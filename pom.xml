@@ -16,7 +16,7 @@
         <source.encoding>UTF-8</source.encoding>
         <java.version>8</java.version>
         <test.name>*</test.name>
-        <webdrivermanager.versin>3.8.1</webdrivermanager.versin>
+        <webdrivermanager.versin>6.1.0</webdrivermanager.versin>
         <serenity-jbehave.version>1.46.0</serenity-jbehave.version>
     </properties>
 
